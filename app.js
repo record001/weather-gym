@@ -9,19 +9,19 @@ let el_card = document.querySelector("#card");
 
 function check_condition() {
   if (
-    (el_temprature.value > 5 && el_temprature.value < 30) ||
+    (el_temprature.value > 5 && el_temprature.value < 30 && !el_isRaining.checked)  ||
     (el_isRaining.checked && el_isOpen.checked)
   ) {
     el_result.innerHTML = "YES 😄";
     el_result.style.color = "green";
   } else if (
-    (el_isRaining.checked && el_temprature.value > 5) ||
-    (el_isRaining.checked && el_temprature.value < 30) ||
+    // (el_isRaining.checked && el_temprature.value > 5) ||
+    // (el_isRaining.checked && el_temprature.value < 30) ||
     el_isRaining.checked ||
     el_temprature.value < 5 ||
     el_temprature.value > 30 ||
-    (el_isRaining.checked && el_temprature.value > 5) ||
-    (el_isRaining.checked && el_temprature.value < 30) ||
+    // (el_isRaining.checked && el_temprature.value > 5) ||
+    // (el_isRaining.checked && el_temprature.value < 30) ||
     (el_isOpen.checked && el_temprature.value < 5)
   ) {
     el_result.innerHTML = "NO 😏";
